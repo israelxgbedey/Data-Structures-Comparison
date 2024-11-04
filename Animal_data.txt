@@ -4,7 +4,6 @@ Giraffe
 Tiger
 Dolphin
 Bear
-Wolf
 Kangaroo
 Horse
 Penguin
