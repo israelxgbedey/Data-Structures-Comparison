@@ -1,80 +1,75 @@
-Data Storage and Comparison of Data Structures
-This project demonstrates the use of various data structures such as arrays, dictionaries (maps), stacks, and queues to store and manage a large amount of data. The project includes two primary comparisons:
+# Data Storage and Comparison of Data Structures
 
-Array vs. Map (Dictionary)
+This project demonstrates the use of various data structures in C#, including arrays, dictionaries (maps), stacks, and queues, to store and manage a large amount of data. The goal is to explore the differences in behavior and efficiency between these data structures.
 
-Stack vs. Queue
+## Project Overview
 
-How Each Data Structure Works
-Array
-An array stores elements in contiguous memory locations. Each element can be accessed directly using its index, making arrays efficient for random access.
+The project includes two primary comparisons:
 
-Map (Dictionary)
-A map (implemented as a dictionary in C#) stores key-value pairs. Each key maps to a specific value, allowing for efficient data retrieval based on the key. Dictionaries use a hash table internally to achieve average O(1) time complexity for lookups, inserts, and deletes.
+1. **Array vs. Map (Dictionary)**
+2. **Stack vs. Queue**
 
-Stack
-A stack is a Last-In-First-Out (LIFO) data structure. Elements are added (pushed) and removed (popped) from the end of the list. This structure is suitable for scenarios where you need to reverse the order of elements, such as undo operations or navigating back through history.
+Each comparison highlights the unique characteristics and efficiency of each data structure, showing when each might be preferred based on different use cases.
 
-Queue
-A queue is a First-In-First-Out (FIFO) data structure. Elements are added (enqueued) to the end and removed (dequeued) from the front of the list. Queues are ideal for scenarios where the order of elements must be preserved, such as task scheduling or handling requests in a web server.
+## Data Structures Used
 
-Differences and Efficiency
-Array vs. Map (Dictionary)
-Array
-How it works: Stores elements in contiguous memory locations.
+### Array
+An array stores elements in contiguous memory locations, allowing for efficient index-based access.
 
-Efficiency: O(1) time complexity for accessing elements by index.
+- **Efficiency**: O(1) for direct access by index.
+- **Use Case**: Best for fixed-size datasets with frequent access to elements by index.
 
-Scenario: Suitable for fixed-size datasets with frequent index-based access.
+### Dictionary (Map)
+A dictionary stores data in key-value pairs, allowing for efficient retrieval based on unique keys.
 
-Map (Dictionary)
-How it works: Stores key-value pairs using a hash table.
+- **Efficiency**: O(1) average for lookups, inserts, and deletes.
+- **Use Case**: Ideal for dynamic datasets where data is accessed by a unique key, like animal names.
 
-Efficiency: O(1) average time complexity for lookups, inserts, and deletes.
+### Stack
+A stack is a Last-In-First-Out (LIFO) data structure, suitable for scenarios where elements need to be accessed in reverse order of insertion.
 
-Scenario: Ideal for dynamic datasets where quick access to data based on unique keys is necessary.
+- **Efficiency**: O(1) for push and pop operations.
+- **Use Case**: Useful for undo operations, backtracking, and navigation history.
 
-Stack vs. Queue
-Stack
-API:
+### Queue
+A queue is a First-In-First-Out (FIFO) data structure, ideal for preserving the order of elements.
 
-public void Push(T element): Adds element to the end of the list (O(1))
+- **Efficiency**: O(1) for enqueue and dequeue operations.
+- **Use Case**: Commonly used in task scheduling and request handling.
 
-public T Pop(): Removes element from the end of the list (O(1))
+## Code API
 
-public int Size(): Returns the number of elements (O(1))
+### Stack Methods
+- `public void Push(T element)`: Adds an element to the end of the list (O(1))
+- `public T Pop()`: Removes an element from the end of the list (O(1))
+- `public int Size()`: Returns the number of elements (O(1))
+- `public bool IsEmpty()`: Checks if the stack is empty (O(1))
 
-public bool IsEmpty(): Checks if the stack is empty (O(1))
+### Queue Methods
+- `public void Enqueue(T element)`: Adds an element to the end of the list (O(1))
+- `public T Dequeue()`: Removes an element from the front of the list (O(1))
+- `public int Size()`: Returns the number of elements (O(1))
+- `public bool IsEmpty()`: Checks if the queue is empty (O(1))
 
-How it works: Follows the LIFO principle; last added element is the first to be removed.
+## Differences and Efficiency
 
-Scenario: Suitable for scenarios requiring reverse operations, such as undo operations or navigating back in a browser.
+### Array vs. Dictionary
+- **Array**: Provides O(1) time complexity for accessing elements by index.
+- **Dictionary**: Offers O(1) average time complexity for key-based lookups, inserts, and deletes, thanks to hash-based storage.
 
-Queue
-API:
+### Stack vs. Queue
+- **Stack**: Follows LIFO principle, ideal for reverse-order scenarios.
+- **Queue**: Follows FIFO principle, maintaining insertion order, ideal for task scheduling.
 
-public void Enqueue(T element): Adds element to the end of the list (O(1))
+## Usage Instructions
 
-public T Dequeue(): Removes element from the front of the list (O(1))
+1. **Create Data Files**  
+   Prepare two text files named `Animal_data.txt` and `Habitat_data.txt`.
+   - Each line in `Animal_data.txt` should contain an animal name.
+   - Each line in `Habitat_data.txt` should contain the corresponding habitat.
+   - Ensure both files have the same number of entries, with each line formatted as `Animal, Habitat`.
 
-public int Size(): Returns the number of elements (O(1))
-
-public bool IsEmpty(): Checks if the queue is empty (O(1))
-
-How it works: Follows the FIFO principle; first added element is the first to be removed.
-
-Scenario: Ideal for scenarios where order must be preserved, such as task scheduling or handling requests in a web server.
-
-Code Implementation
-The provided code demonstrates how to read data from external files, store them in various data structures, and perform operations like searching, displaying, and removing elements.
-
-Usage Instructions
-Create two text files: Animal_data.txt and Habitat_data.txt.
-
-Animal_data.txt should contain a list of animals.
-
-Habitat_data.txt should contain corresponding habitats.
-
-Ensure both files have the same number of entries.
-
-Run the program to load the data, display it, and interactively search for animal habitats.
+2. **Run the Program**  
+   - Load the data from the files into the data structures.
+   - Display the data and interactively search for animal habitats.
+   - Experiment with the stack and queue by pushing/popping and enqueuing/dequeuing elements.
