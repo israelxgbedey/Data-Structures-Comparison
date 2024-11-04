@@ -4,7 +4,6 @@ Savanna
 Jungle
 Ocean
 Forest
-Tundra
 Outback
 Grasslands
 Antarctica
